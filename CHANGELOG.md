@@ -1,12 +1,20 @@
 # Changelog
 
-Toutes les modifications notables de ce projet seront documentées dans ce fichier.
+All notable changes to this project are documented in this file.
+
+## [0.2.2] - Unreleased
+
+### Changed
+- Renamed the package and library to `hazard3-gl5528` and `hazard3_gl5528` in the independent Hazard3 Async ecosystem.
+- Made `hazard3-rp` the default HAL for RP235xa, with upstream `embassy-rp` as an alternative.
+- Added explicit HAL and chip selection; `rp235x` remains an alias for `rp235xa`.
+- Documented migration and corrected the ADC resolution and voltage divider formula.
 
 # [0.2.0] - 2026-05-02
 
-- Remplacement des plages de compatibilité par des versions explicites afin d’assurer une meilleure stabilité et reproductibilité des builds.
+- Replaced compatibility ranges with explicit versions for more stable and reproducible builds.
 
-### Dépendances
+### Dependencies
 
 ```toml
 [dependencies.embassy-rp]
@@ -17,21 +25,21 @@ features = ["unstable-pac"]
 
 
 # [0.1.3] - 2026-04-21
-### Changements
-- **Refonte complète du README** : Détails et doc plus claire .
-- **Optimisation du Cargo.toml** : Elargissement de la compatibilité avec `embassy-rp` (v0.4 à v0.10+).
-- **Support RP235x** : Ajout de la feature pour la Raspberry Pi Pico 2 dans la doc et le README .
+### Changed
+- **README overhaul**: Added details and clearer documentation.
+- **Cargo.toml optimization**: Expanded compatibility with `embassy-rp` (v0.4 to v0.10+).
+- **RP235x support**: Documented the Raspberry Pi Pico 2 feature in the README.
 
 ## [0.1.2] - 2026-04-21
 
-### Ajouté
-- Support officiel de la **Raspberry Pi Pico 2 (RP235x)** via la feature `rp235x`.
-- Documentation mise à jour pour inclure la compatibilité RP235x.
+### Added
+- Official support for the **Raspberry Pi Pico 2 (RP235x)** through the `rp235x` feature.
+- Updated documentation to include RP235x compatibility.
 
-### Modifié
-- **Dépendances** : Élargissement de la plage de version pour `embassy-rp` (`>=0.4, <0.11`). 
-- Ce changement permet d'utiliser les dernières versions de Crates.io (v0.10.0+) sans conflits de dépendances.
-- Mise à jour de la feature interne pour le RP235x vers `rp235xa` pour correspondre aux standards d'Embassy v0.10.
+### Changed
+- **Dependencies**: Expanded the version range for `embassy-rp` (`>=0.4, <0.11`).
+- This change allows recent crates.io versions (v0.10.0+) without dependency conflicts.
+- Updated the internal RP235x feature to `rp235xa` to match Embassy v0.10 conventions.
 
-### Corrigé
-- Résolution des conflits de "links" lors de l'utilisation du driver dans un projet utilisant une version récente d'Embassy.
+### Fixed
+- Resolved "links" conflicts when using the driver with a recent Embassy version.
